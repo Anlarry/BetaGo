@@ -25,7 +25,7 @@ public class ChallengeListener implements ActionListener {
 					JOptionPane.showConfirmDialog(null, "不能和自己对战！", "对战错误", JOptionPane.DEFAULT_OPTION,
 							JOptionPane.ERROR_MESSAGE);
 				} 
-				else if(!GameData.opponentID.equals("")&&GameData.gameOver==false){
+				else if(!GameData.opponentID.equals("") && !GameData.gameOver){
 					JOptionPane.showConfirmDialog(null, "当前正在游戏，不能匹配新的玩家！", "游戏中请勿匹配", JOptionPane.DEFAULT_OPTION,
 							JOptionPane.ERROR_MESSAGE);
 				}

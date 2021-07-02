@@ -24,8 +24,16 @@ public class ChessPoint {
 		return x;
 	}
 
+	public void setCPX(int x) {
+		this.x = x;
+	}
+	
 	public int getCPY() {
 		return y;
+	}
+
+	public void setCPY(int y) {
+		this.y = y;
 	}
 
 	public int hasPoint() {
@@ -34,5 +42,9 @@ public class ChessPoint {
 
 	public Color getCPColor() {
 		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
 }
