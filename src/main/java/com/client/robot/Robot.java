@@ -27,7 +27,6 @@ public class Robot {
         this.oppColor = myColor == Color.BLACK ? Color.WHITE : Color.BLACK;
         this.searchDepth = searchDepth;
     }
-
     public ChessPoint go() {
         int chessNum = 0;
         for(int i = 0; i < 15; i++) {
