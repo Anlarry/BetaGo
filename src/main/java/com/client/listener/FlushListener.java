@@ -8,10 +8,10 @@ import com.client.tools.IOTool;
 
 public class FlushListener implements ActionListener{
 
-	public void actionPerformed(ActionEvent e) {
-		if(GameData.isConnected){
-			IOTool.getInstance().getWriter().println("LIST:"+GameData.myID+"#");
-		}
-	}
+    public void actionPerformed(ActionEvent e) {
+        if(GameData.isConnected){
+            IOTool.getInstance().getWriter().println("LIST:"+GameData.myID+"#");
+        }
+    }
 
 }
