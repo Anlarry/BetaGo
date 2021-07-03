@@ -1,6 +1,7 @@
 package com.client.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.BorderFactory;
@@ -40,12 +41,13 @@ public class MessagePanel extends JPanel {
     private MessagePanel(){
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createTitledBorder("消息面板"));
+        setPreferredSize(new Dimension(286,0));
         sendPanel.add(sendField);
         sendPanel.add(sendBtn);
         add(messagePane,BorderLayout.CENTER);
         add(sendPanel,BorderLayout.SOUTH);
         messagePane.setViewportView(messageArea);
-        sendField.setSize(200,100);
+        sendField.setSize(300,100);
         sendBtn.addActionListener(new SendMessageListener());
     }
     
