@@ -10,9 +10,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import com.client.listener.SendMessageListener;
 import com.client.tools.MessageTool;
+
+import javafx.scene.layout.Border;
 /**
  * 消息传输面板，可以用于传输文本消息
  * 包含一个JTextArea和一个JTextField还有发送的JButton
@@ -41,13 +44,17 @@ public class MessagePanel extends JPanel {
     private MessagePanel(){
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createTitledBorder("消息面板"));
+        // 消息面板，更合取的大小
         setPreferredSize(new Dimension(286,0));
-        sendPanel.add(sendField);
-        sendPanel.add(sendBtn);
+        // 固定布局，防止变形
+        sendPanel.setLayout(new BorderLayout());
+        sendPanel.add(sendField, BorderLayout.WEST);
+        sendPanel.add(sendBtn, BorderLayout.EAST);
+
         add(messagePane,BorderLayout.CENTER);
         add(sendPanel,BorderLayout.SOUTH);
         messagePane.setViewportView(messageArea);
-        sendField.setSize(300,100);
+        // sendField.setPreferredSize(200,100);
         sendBtn.addActionListener(new SendMessageListener());
     }
     
