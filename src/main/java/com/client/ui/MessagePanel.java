@@ -42,12 +42,14 @@ public class MessagePanel extends JPanel {
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createTitledBorder("消息面板"));
         setPreferredSize(new Dimension(286,0));
-        sendPanel.add(sendField);
-        sendPanel.add(sendBtn);
+        sendPanel.setLayout(new BorderLayout());
+        sendPanel.add(sendField,BorderLayout.CENTER);
+        sendPanel.add(sendBtn, BorderLayout.EAST);
         add(messagePane,BorderLayout.CENTER);
         add(sendPanel,BorderLayout.SOUTH);
         messagePane.setViewportView(messageArea);
-        sendField.setSize(300,100);
+        // sendField.setSize(100,100);
+        // sendField.setPreferredSize(new Dimension(50, 20));
         sendBtn.addActionListener(new SendMessageListener());
     }
     

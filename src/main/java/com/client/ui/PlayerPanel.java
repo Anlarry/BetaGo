@@ -47,7 +47,7 @@ public class PlayerPanel extends JPanel {
         add(buttonBar,BorderLayout.SOUTH);
         playerList.addMouseListener(new ListListener());
         playerList.setFixedCellWidth(240);  //设置固定单元格大小，不会跟随内容自动调整
-        //playerPane.setSize(20, 500);
+        // playerPane.setSize(20, 500);
         playerPane.setViewportView(playerList);
         playerPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS); //只有横向滚动条
         //playerPane.setVerticalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
