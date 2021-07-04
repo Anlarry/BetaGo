@@ -42,6 +42,11 @@ public class Player {
     }
 
     public PrintStream getWriter() {
+        // 延迟以免频繁发送消息被遗漏
+        try {  
+            Thread.sleep(5); // 单位：毫秒  
+        } catch(Exception E) {
+        }
         return writer;
     }
 
