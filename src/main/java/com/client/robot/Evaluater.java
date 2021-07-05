@@ -91,28 +91,41 @@ public class Evaluater {
                 cnt++;
             }
             boolean semi = true;
+            boolean close = true;
             if(inRange(bx-dx) && inRange(by-dy) && inRange(x) && inRange(y)) {
                 if(cp[bx-dx][by-dy] == null && cp[x][y] == null)
                     semi = false; 
+            }
+            if(inRange(bx-dx) && inRange(by-dy) && cp[bx-dx][by-dy] == null) {
+                close = false;
+            }
+            if(inRange(x) && inRange(y) && cp[x][y] == null) {
+                close = false;
             }
             int curVal = 0;
             switch (cnt) {
                 case 1:
                     curVal = semi ? semiONE : ONE;
+                    if(close) curVal = 0;
                     break;
                 case 2:
                     curVal = semi ? semiTWO : TWO;
+                    if(close) curVal = 0;
                     break;
                 case 3:
                     curVal = semi ? semiTHREE : THREE;
+                    if(close) curVal = 0;
                     break;
                 case 4:
                     curVal = semi ? semiFOUR : FOUR;
+                    if(close) curVal = 0;
                     break;
                 case 5:
                     curVal = FIVE;
                     break;
                 default:
+                    curVal = FIVE;
+                    break;
                     // System.out.println("Bad eval");
             }
             if(color != this.color) 
